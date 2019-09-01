@@ -6,4 +6,8 @@
     <RootNamespace>NET.W._2019.Gridushko._16</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <PackageReference Include="StyleCop" Version="6.1.0" />
+  </ItemGroup>
+
 </Project>

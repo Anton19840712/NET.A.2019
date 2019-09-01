@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="MSTest.TestFramework" Version="1.4.0" />
+    <PackageReference Include="StyleCop" Version="6.1.0" />
   </ItemGroup>
 
 </Project>
