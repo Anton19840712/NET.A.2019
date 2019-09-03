@@ -6,6 +6,10 @@ namespace NET.W._2019.Gridushko._11
 {
     public class Binarysearch
     {
+        /// <summary>
+        /// Entry point in programm
+        /// </summary>
+        /// <param name="args"></param>
         static void Main(string[] args)
         {
             Random random = new Random();
@@ -21,7 +25,12 @@ namespace NET.W._2019.Gridushko._11
             Console.WriteLine("Value found at index: " + BinarySearch(numbers, searchNumber));
             Console.ReadKey();
         }
-
+        /// <summary>
+        /// Methods implements logic of binary search
+        /// </summary>
+        /// <param name="numbers"></param>
+        /// <param name="searchValue"></param>
+        /// <returns></returns>
         public static int BinarySearch(int[] numbers, int searchValue)
         {
             int midIndex;
