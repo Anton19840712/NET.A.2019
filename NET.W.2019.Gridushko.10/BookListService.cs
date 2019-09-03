@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using BookStorage;
-
+    //using Logger;
 
     /// <summary>
     /// Interface implemetation<see cref="IBookService"/>
@@ -14,6 +14,7 @@
         #region private field
         private IBookStorage _bookStorage;
         private List<Book> _books = new List<Book>();
+        private readonly ILogger _logger;
         #endregion private field
 
         /// <summary>
@@ -24,6 +25,7 @@
         public BookListService(IBookStorage bookStorage)
         {
             _bookStorage = bookStorage ?? throw new ArgumentNullException(nameof(bookStorage));
+            _logger = LoggerCreater.GetLogger(nameof(BookListService));
 
             try
             {
@@ -33,7 +35,7 @@
             {
                 throw new BookServiceException("An error occurred while reading from the repository.", e);
             }
-
+            _logger.Info("Service added");
         }
 
         /// <summary>

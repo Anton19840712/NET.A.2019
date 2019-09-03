@@ -5,12 +5,14 @@
     using System.Collections.Generic;
     using BooksLibrary.Formatters;
     using BookStorage;
+    //using Logger;
     public class Program
     {
         private static readonly string FilePath = @"data.bin";
+        private static ILogger _logger;
         public static void Main()
         {
-
+            _logger = LoggerCreater.GetLogger(nameof(Program));
             try
             {
                 IBookStorage bookRepository = new BookBinaryStorage(FilePath);
@@ -45,7 +47,7 @@
             }
             catch (Exception e)
             {
-
+                _logger.Error("Error, see nuances", e);
             }
 
             Console.ReadLine();

@@ -11,6 +11,7 @@
     public class BookBinaryStorage : IBookStorage
     {
         private readonly string _filePath;
+        private readonly ILogger _logger;
 
         /// <summary>
         /// Adds instance
@@ -22,7 +23,8 @@
         public BookBinaryStorage(string filePath)
         {
             _filePath = filePath ?? throw new ArgumentNullException(nameof(filePath));
-
+            _logger = LoggerCreater.GetLogger(nameof(BookBinaryStorage));
+            _logger.Info("Storage was created");
         }
 
         public IEnumerable<BookDal> GetBooks()
@@ -50,6 +52,8 @@
                     WriteBook(writer, book);
                 }
             }
+
+            _logger.Info("Creation of books completed.");
 
         }
 
