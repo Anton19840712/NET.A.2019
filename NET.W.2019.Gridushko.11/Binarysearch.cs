@@ -14,7 +14,7 @@ namespace NET.W._2019.Gridushko._11
         {
             Random random = new Random();
             int[] numbers = new int[100];
-            for (int i = numbers.Length-1;  i>-1; i--)
+            for (int i = numbers.Length - 1; i > -1; i--)
             {
                 numbers[i] = random.Next(1, 100);
             }
