@@ -63,7 +63,6 @@ namespace AdditionConsolPlusSQLTasks
             {
                 resultValue = lastValue.Substring(0, lastValue.Length - 3);
             }
-
             string path = @"C:\\datafiles\" + resultValue + ".xml";
             XmlSerializer xmlSerializer = new XmlSerializer(typeof(List<Person>));
             StreamWriter sw = new StreamWriter(path);
