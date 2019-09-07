@@ -7,6 +7,10 @@ using System.Text.RegularExpressions;
 namespace AdditionConsolPlusSQLTasks
 
 {
+    /// <summary>
+    /// Class that enables to print catalog info using elegent frames in tables to look data nice. 
+    /// Consists of different checks and several help methods.
+    /// </summary>
     public class ConsoleTable
     {
         public IList<object> Columns { get; set; }

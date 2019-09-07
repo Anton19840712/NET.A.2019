@@ -2,13 +2,23 @@
 
 namespace AdditionConsolPlusSQLTasks
 {
+    /// <summary>
+    /// Class consists of several menus, enable user to make his own choice 
+    /// to continue application using
+    /// </summary>
     public class MenuPanels
     {
+        /// <summary>
+        /// Greeting menu
+        /// </summary>
         public static void WriteInputGreeeting()
         {
             Console.WriteLine("WELCOME TO CATALOG EXPRESS\n         SYSTEM");
             Console.WriteLine("Choose your command to continue");
         }
+        /// <summary>
+        /// Visual separator between logical spases of menus
+        /// </summary>
         public static void WriteInputLine()
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -16,6 +26,9 @@ namespace AdditionConsolPlusSQLTasks
             Console.ResetColor();
             Console.WriteLine();
         }
+        /// <summary>
+        /// Command menu
+        /// </summary>
         public static void WriteInputCommandMainMenu()
         {
             Console.WriteLine(("LIST OF COMMANDS:\n"));
@@ -36,6 +49,9 @@ namespace AdditionConsolPlusSQLTasks
 
             Console.Write(">");
         }
+        /// <summary>
+        /// Edition menu to edit records of dataset
+        /// </summary>
         public static void WriteInputNumberUpdateMenu()
         {
             Console.WriteLine("\nInput the number of the field you want to change\n");

@@ -5,6 +5,9 @@ using System.Xml.Serialization;
 
 namespace AdditionConsolPlusSQLTasks
 {
+    /// <summary>
+    /// Class of Person with fields and [attridutes] for designed XML serialization
+    /// </summary>
     [XmlRoot("person")]
     public class Person
     {

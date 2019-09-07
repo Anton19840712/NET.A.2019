@@ -7,8 +7,15 @@ using System.Linq;
 
 namespace AdditionConsolPlusSQLTasks
 {
+    /// <summary>
+    /// Additional application commands that are not CRUD operations
+    /// </summary>
     public class OperationsExtra
     {
+        /// <summary>
+        /// Counts records in database
+        /// </summary>
+        /// <param name="persons"></param>
         public static void Counter(ICollection<Person> persons)
         {
             var item = persons.Count();
@@ -21,10 +28,18 @@ namespace AdditionConsolPlusSQLTasks
                 Console.WriteLine("\n{0} record", item);
             }
         }
+        /// <summary>
+        /// Exit application
+        /// </summary>
         public static void LeaveEnvironment()
         {
             Environment.Exit(0);
         }
+        /// <summary>
+        /// Exports database info in CSV format
+        /// </summary>
+        /// <param name="persons"></param>
+        /// <param name="lastValue"></param>
         public static void ExportCSV(IList<Person> persons, string lastValue)
         {
             string resultValue;
@@ -50,6 +65,11 @@ namespace AdditionConsolPlusSQLTasks
             }
             Console.WriteLine("\nFile csv by path {0} was created successfully!", path);
         }
+        /// <summary>
+        /// Exports database info in XML format
+        /// </summary>
+        /// <param name="persons"></param>
+        /// <param name="lastValue"></param>
         public static void ExportXML(IList<Person> persons, string lastValue)
         {
             string resultValue;

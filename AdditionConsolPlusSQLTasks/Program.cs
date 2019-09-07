@@ -3,10 +3,20 @@ using System.Collections.Generic;
 using System.Linq;
 
 namespace AdditionConsolPlusSQLTasks
-{   
+{
+    /// <summary>
+    /// Initial class of application
+    /// </summary>
     class Program
     {
-         static void Main(string[] args)
+        /// <summary>
+        /// Method contains Ilist of initial records of catalog database.
+        /// Consists of an entry point of application
+        /// Implements split logic for incoming commands
+        /// Enables to redirect implementaion of commands in next operation methods using switch operator
+        /// </summary>
+        /// <param name="args"></param>
+        static void Main(string[] args)
         {
             MenuPanels.WriteInputGreeeting();
 
@@ -21,39 +31,22 @@ namespace AdditionConsolPlusSQLTasks
 
             while (true)
             {
-                string command = null;
-
                 MenuPanels.WriteInputLine();
                 MenuPanels.WriteInputCommandMainMenu();
 
-                command = Console.ReadLine();
-                string[] commandsList = command.Split(", ");// у нас есть сейчас список команд, введенных в консоль
+                string[] commandsList = Console.ReadLine().Split(", ");// у нас есть сейчас список команд, введенных в консоль
 
                 foreach (string stringElement in commandsList)
                 {
-
-                    string preResultCommand = new string((from c in stringElement
-                                                          where char.IsWhiteSpace(c) || char.IsLetterOrDigit(c)
-                                                          select c).ToArray()); // чистим команды от лишних вещей, чтобы далее было удобнее обрабатывать
-
-                    string resultCommand = (preResultCommand.Replace("find ", ""));
+                    string resultCommand = OperationsSplit.SplitClean(stringElement).Replace("find ", "");
                     List<string> resultElements = resultCommand.Split(' ').Where(c => c != string.Empty).ToList();//Рассплитил на элементы
-                    List<string> fieldsElements = new List<string> { "list id", "firstname", "lastname" };
-
                     var lastValue = resultElements.Last();//works, взял последний элемент
 
-                    if (resultElements.Count() == 2 && lastValue != "csv" && lastValue != "xml")
+                    if (resultElements.Count() == 2 && lastValue != "csv" && lastValue != "xml" || resultElements.Count() == 3)
                     {
                         string[] arr = resultCommand.Trim().Split(null);//
                         arr = arr.Where((o, i) => i != arr.Length - 1).ToArray();
                         resultCommand = string.Join(" ", arr);// склеил в комманду
-                    }
-
-                    if (resultElements.Count() == 3)
-                    {
-                        string[] array = resultCommand.Trim().Split(null);//
-                        array = array.Where((o, i) => i != array.Length - 1).ToArray();
-                        resultCommand = string.Join(" ", array);// склеил в комманду
                     }
 
                     bool boolResult = ActionTypes.listcommands.Any(o => o.StartsWith(resultCommand));

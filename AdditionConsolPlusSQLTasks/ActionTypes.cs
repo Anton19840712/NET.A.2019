@@ -6,6 +6,9 @@ namespace AdditionConsolPlusSQLTasks
 {
     public class ActionTypes
     {
+        /// <summary>
+        /// String massive of available commands in application: listcommands
+        /// </summary>
         public static string[] listcommands = new string[14]
          {
             "list id",

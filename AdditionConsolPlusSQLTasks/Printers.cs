@@ -3,6 +3,9 @@ using System.Collections.Generic;
 
 namespace AdditionConsolPlusSQLTasks
 {
+    /// <summary>
+    /// Contains methods to print database info differently.
+    /// </summary>
     public class Printers
     {
         public static void PrintPersons(IEnumerable<Person> persons)
