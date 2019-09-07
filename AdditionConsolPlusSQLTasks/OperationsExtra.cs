@@ -9,7 +9,7 @@ namespace AdditionConsolPlusSQLTasks
 {
     public class OperationsExtra
     {
-        public static void Counter(IEnumerable<Person> persons)
+        public static void Counter(ICollection<Person> persons)
         {
             var item = persons.Count();
             if (item > 1)

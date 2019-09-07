@@ -4,19 +4,19 @@ namespace AdditionConsolPlusSQLTasks
 {
     public class MenuPanels
     {
-        internal static void WriteInputGreeeting()
+        public static void WriteInputGreeeting()
         {
             Console.WriteLine("WELCOME TO CATALOG EXPRESS\n         SYSTEM");
             Console.WriteLine("Choose your command to continue");
         }
-        internal static void WriteInputLine()
+        public static void WriteInputLine()
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
             Console.WriteLine(new string('.', 32));
             Console.ResetColor();
             Console.WriteLine();
         }
-        internal static void WriteInputCommandMainMenu()
+        public static void WriteInputCommandMainMenu()
         {
             Console.WriteLine(("LIST OF COMMANDS:\n"));
             Console.WriteLine("list - outputs collection");
@@ -36,7 +36,7 @@ namespace AdditionConsolPlusSQLTasks
 
             Console.Write(">");
         }
-        internal static void WriteInputNumberUpdateMenu()
+        public static void WriteInputNumberUpdateMenu()
         {
             Console.WriteLine("\nInput the number of the field you want to change\n");
             Console.WriteLine("1 - Change firstname");

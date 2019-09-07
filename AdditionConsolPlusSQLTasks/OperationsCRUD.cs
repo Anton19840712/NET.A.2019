@@ -6,7 +6,7 @@ namespace AdditionConsolPlusSQLTasks
 {
     public class OperationsCRUD
     {
-        internal static object GetPersons(object obj, int identis)
+        public static object GetPersons(object obj, int identis)
         {
             var person = obj as Person;
 
