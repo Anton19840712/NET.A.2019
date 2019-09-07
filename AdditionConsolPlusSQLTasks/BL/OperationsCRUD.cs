@@ -4,8 +4,17 @@ using System.Linq;
 
 namespace AdditionConsolPlusSQLTasks
 {
+    /// <summary>
+    /// Class contains basic CRUD logic
+    /// </summary>
     public class OperationsCRUD
     {
+        /// <summary>
+        /// Method shows all records in table
+        /// </summary>
+        /// <param name="obj"></param>
+        /// <param name="identis"></param>
+        /// <returns></returns>
         public static object GetPersons(object obj, int identis)
         {
             var person = obj as Person;
@@ -25,6 +34,10 @@ namespace AdditionConsolPlusSQLTasks
             person.BirthDate = birthdate;
             return person;
         }
+        /// <summary>
+        /// Method creates a person 
+        /// </summary>
+        /// <param name="persons"></param>
         public static void Create(IList<Person> persons)
         {
             var identis = (from t in persons select t.Id).Last() + 1;
@@ -41,6 +54,11 @@ namespace AdditionConsolPlusSQLTasks
             Printers.PrintEditPerson(ref person);
             Console.WriteLine("Was created successfully!\n");
         }
+        /// <summary>
+        /// Methods finds Firstname of Person
+        /// </summary>
+        /// <param name="persons"></param>
+        /// <param name="lastValue"></param>
         public static void Firstname(IEnumerable<Person> persons, string lastValue)
         {
             foreach (var person in persons)
@@ -51,6 +69,11 @@ namespace AdditionConsolPlusSQLTasks
                 }
             }
         }
+        /// <summary>
+        /// Methods finds Lastname of Person
+        /// </summary>
+        /// <param name="persons"></param>
+        /// <param name="lastValue"></param>
         public static void Lastname(IEnumerable<Person> persons, string lastValue)
         {
             foreach (var person in persons)
@@ -61,6 +84,11 @@ namespace AdditionConsolPlusSQLTasks
                 }
             }
         }
+        /// <summary>
+        /// Methods edits Person information
+        /// </summary>
+        /// <param name="persons"></param>
+        /// <param name="lastValue"></param>
         public static void Edit(IList<Person> persons, string lastValue)
         {
             for (int i = persons.Count - 1; i >= 0; i--)
@@ -116,6 +144,11 @@ namespace AdditionConsolPlusSQLTasks
                 }
             }
         }
+        /// <summary>
+        /// Methods removes person record by Id
+        /// </summary>
+        /// <param name="persons"></param>
+        /// <param name="lastValue"></param>
         public static void Remove(IList<Person> persons, string lastValue)
         {
             for (int i = persons.Count - 1; i >= 0; i--)
@@ -128,6 +161,10 @@ namespace AdditionConsolPlusSQLTasks
 
             Console.WriteLine("\nRecord #{0} is removed", lastValue);
         }
+        /// <summary>
+        /// Methods cleans out all inf in database
+        /// </summary>
+        /// <param name="persons"></param>
         public static void Purge(IList<Person> persons)
         {
             Console.WriteLine("Purge");
