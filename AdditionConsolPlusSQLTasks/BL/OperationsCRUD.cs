@@ -51,7 +51,7 @@ namespace AdditionConsolPlusSQLTasks
                 BirthDate = person.BirthDate,
             });
             Console.WriteLine("Record like: \n");
-            Printers.PrintEditPerson(ref person);
+            Printers.PrintEditPerson(person);
             Console.WriteLine("Was created successfully!\n");
         }
         /// <summary>
