@@ -93,7 +93,7 @@ namespace AdditionConsolPlusSQLTasks
                                 Console.WriteLine("Insert another lastname:");
                                 string anotherLastname = Console.ReadLine();
                                 persons[i].Lastname = anotherLastname;
-                                Console.WriteLine("\nNew person info looks like:\n {0} {1} {2} {3}", persons[i].Id, persons[i].Firstname, persons[i].Lastname, persons[i].BirthDate);
+                                Console.WriteLine("\nNew person info looks like:\n{0} {1} {2} {3}", persons[i].Id, persons[i].Firstname, persons[i].Lastname, persons[i].BirthDate);
                                 Console.WriteLine("And edited successfully!");
                                 break;
                             }
@@ -102,7 +102,7 @@ namespace AdditionConsolPlusSQLTasks
                                 Console.WriteLine("Insert another birth of date:");
                                 DateTime anotherBirtdate = DateTime.Parse(Console.ReadLine());
                                 persons[i].BirthDate = anotherBirtdate;
-                                Console.WriteLine("\nNew person info looks like:\n {0} {1} {2} {3}", persons[i].Id, persons[i].Firstname, persons[i].Lastname, persons[i].BirthDate);
+                                Console.WriteLine("\nNew person info looks like:\n{0} {1} {2} {3}", persons[i].Id, persons[i].Firstname, persons[i].Lastname, persons[i].BirthDate);
                                 Console.WriteLine("And edited successfully!");
                                 break;
                             }
