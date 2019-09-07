@@ -19,5 +19,6 @@ namespace AdditionConsolPlusSQLTasks
 
         [XmlElement("BirthDate")]
         public DateTime BirthDate { get; set; }
+
     }
 }

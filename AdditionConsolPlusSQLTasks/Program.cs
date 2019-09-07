@@ -6,25 +6,7 @@ namespace AdditionConsolPlusSQLTasks
 {   
     class Program
     {
-        public static string[] listcommands = new string[14]
-        {
-            "list id",
-            "firstname",
-            "lastname",
-            "list",
-            "stat",
-            "find firstname ",
-            "find lastname",
-            "create",
-            "edit",
-            "remove",
-            "purge",
-            "export xml",
-            "export csv",
-            "exit"
-        };
-        
-        static void Main(string[] args)
+         static void Main(string[] args)
         {
             MenuPanels.WriteInputGreeeting();
 
@@ -74,7 +56,7 @@ namespace AdditionConsolPlusSQLTasks
                         resultCommand = string.Join(" ", array);// склеил в комманду
                     }
 
-                    bool boolResult = listcommands.Any(o => o.StartsWith(resultCommand));
+                    bool boolResult = ActionTypes.listcommands.Any(o => o.StartsWith(resultCommand));
 
                     if (true)
                     {
