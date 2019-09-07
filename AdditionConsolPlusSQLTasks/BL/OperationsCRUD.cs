@@ -99,7 +99,7 @@ namespace AdditionConsolPlusSQLTasks
 
                     var person = new Person { Id = persons[i].Id, Firstname = persons[i].Firstname, Lastname = persons[i].Lastname, BirthDate = persons[i].BirthDate };
 
-                    Printers.PrintEditPerson(ref person);
+                    Printers.PrintEditPerson(person);
 
                     MenuPanels.WriteInputNumberUpdateMenu();
                     int result = Convert.ToInt16(Console.ReadLine());
