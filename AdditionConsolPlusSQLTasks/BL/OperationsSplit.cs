@@ -17,5 +17,6 @@ namespace AdditionConsolPlusSQLTasks
                                               select c).ToArray()); // чистим команды от лишних вещей, чтобы далее было удобнее обрабатывать
             return tempString;
         }
+
     }
 }
