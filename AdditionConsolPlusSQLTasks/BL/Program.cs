@@ -11,9 +11,7 @@ namespace AdditionConsolPlusSQLTasks
     class Program
     {
         /// <summary>
-        /// Method contains Ilist of initial records of catalog database.
-        /// Consists of an entry point of application
-        /// Implements split logic for incoming commands
+        /// Method implements split logic for incoming commands
         /// Enables to redirect implementaion of commands in next operation methods using switch operator
         /// </summary>
         /// <param name="args"></param>
@@ -38,7 +36,8 @@ namespace AdditionConsolPlusSQLTasks
                     {
                         string[] arr = resultCommand.Trim().Split(null);//
                         arr = arr.Where((o, i) => i != arr.Length - 1).ToArray();
-                        resultCommand = string.Join(" ", arr);                    }
+                        resultCommand = string.Join(" ", arr);
+                    }
 
                     bool boolResult = ActionTypes.listcommands.Any(o => o.StartsWith(resultCommand));
 
@@ -117,5 +116,3 @@ namespace AdditionConsolPlusSQLTasks
         }
     }
 }
-
-
