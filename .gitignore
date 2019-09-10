@@ -87,7 +87,7 @@ StyleCopReport.xml
 *.pidb
 *.svclog
 *.scc
-
+*.csproj
 # Chutzpah Test files
 _Chutzpah*
 
@@ -246,7 +246,6 @@ ServiceFabricBackup/
 *.rptproj.bak
 
 # SQL Server files
-*.mdf
 *.ldf
 *.ndf
 
