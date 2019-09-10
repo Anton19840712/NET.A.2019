@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 
 
-namespace ConsoleApp1
+namespace FileCabinet
 {
     /// <summary>
     /// Initial class of application
