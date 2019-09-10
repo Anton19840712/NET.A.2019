@@ -1,4 +1,5 @@
 ## NET.A.2019.Gridushko. Additional sql tasks.
+[google](https://www.google.com/)
 
 - [Task 01]. Write a query that displays a list of customers in a table consisting of two columns, CustomerID and CompanyName. Table rows must be sorted by customer code.
 - [Task 02]. Write a query that displays the EmployeeID of the last employee hired by the company.
