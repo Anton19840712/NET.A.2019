@@ -1,21 +1,20 @@
-Used DBMS: MySQL.
+# NET.A.2019.Gridushko. Additional sql tasks.
 
-Script to create Northwind database: [install_northwind_mysql.sql](install_northwind_mysql.sql).
+- [Task 01]. Write a query that displays a list of customers in a table consisting of two columns, CustomerID and CompanyName. Table rows must be sorted by customer code.
+- [Task 02]. Write a query that displays the EmployeeID of the last employee hired by the company.
+- [Task 03]. Write a query that lists all countries from the dbo.Customers.Country column. The list should be sorted in alphabetical order, should contain only unique values ??and should not contain duplicates.
+- [Task 04]. Write a query that displays a list of names of customer companies located in the following cities: Berlin, London, Madrid, Brussels, Paris. The list should be sorted by company identifier in reverse alphabetical order.
+- [Task 05]. Write a query that lists the identifiers of the companies for which orders were delivered (dbo.Orders.RequiredDate) in September 1996. The list should be sorted in alphabetical order.
+- [Task 06]. Write a query that displays the name of the contact person of the customer company, whose phone number starts with the code "171" and contains "77", and the fax number starts with the code "171" and ends with "50".
 
-- [Task 01](01 Task.sql). Write a query to display a table with customers with columns CustomerID and CompanyName. Sort results by customer identifier.
-- [Task 02](Task02.sql). Write a query to display EmployeeID of the last hired employee.
-- [Task 03](Task03.sql). Write a query to display all countries from the column dbo.Customers.Country. The list should be sorted in alphabetical order and should contain unique values without duplicates.
-- [Task 04](Task04.sql). Write a query to display names of customer companies located in te following cities: Berlin, London, Madrid, Bruxelles, Paris. The list should be sorted by customer identifier in reverse alphabetical order.
-- [Task 05](Task05.sql). Write a query to display the identifiers of the customer companies, for which orders were delivered (dbo.Orders.RequiredDate) in September 1996. The list should be sorted in alphabetical order.
-- [Task 06](Task06.sql). Write a query to display a contact name of the customer company, whose phone number starts with the code "171" and contains "77" and the fax number starts with the code "171" and ends with "50".
-- [Task 07](Task07.sql). Write a query to display the number of customer companies located in three Scandinavian contries. The resulting table should contain columns City and CustomerCount.
-- [Task 08](Task08.sql). Write a query to display the number of customer companies in countries, having 10 or more customers. The resulting table should contain columns Country and CustomerCount, results should be sorted in reverse order by the number of customers in the country.
-- [Task 09](Task09.sql). Write a query to display average freight (dbo.Order.Freight) of orders for customer companies, whose ship city located in United Kingdom or Canada. An additional criterion is the average freight of an order - greater than or equal to 100, or less than 10. The resulting table should contain columns CustomerID and FreightAvg, average freight should be rounded to the integer, results should be sorted in reverse order by average freight.
-- [Task 10](Task10.sql). Write a query to display EmployeeID of the last but one hired employee. Use subquery to exclude the last hired employee.
-- [Task 11](Task11.sql). Write a query to display EmployeeID of the last but one hired employee. Use keywords OFFSET and FETCH.
-- [Task 12](Task12.sql). Write a query to display the sum of freights for customer companies of orders, whose freight is greater than or equal to the average freight of all orders and the date of the shipment should be in the second half of July 1996. The resulting table should contain columns CustomerID and FreightSum, results should be sorted by sum of the freights.
-- [Task 13](Task13.sql). Write a query to display 3 orders with the highest cost created after September 1, 1997 inclusive and were delivered to South America. The total cost is calculated as the sum of order details with discount. The resulting table should contain columns CustomerID, ShipCountry and OrderPrice, results should be sorted by order cost in reverse order.
-- [Task 14](Task14.sql). Rewrite the query using grouping:
+- [Task 07]. Write a query that displays the number of customer companies that are located in cities belonging to three Scandinavian countries. The resulting table should consist of two columns City and CustomerCount.
+- [Task 08]. Write a query that displays the number of customer companies in countries that have 10 or more customers. The resulting table should have the Country and CustomerCount columns, the rows of which should be sorted in reverse order by the number of customers in the country.
+- [Task 09](09 Task.sql). Write a query that displays the average freight cost (dbo.Order.Freight) of orders for customer companies that indicate the location of the order in a city belonging to the United Kingdom or Canada. An additional selection criterion is the value of the average cost of the order — greater than or equal to 100, or less than 10. The resulting table should have columns CustomerID and FreightAvg, the value of the average cost should be rounded to the integer value, the rows should be sorted in reverse order by the value of the average freight.
+- [Task 10]. Write a query that displays the EmployeeID of the penultimate employee hired by the company. Use the subquery to exclude the last employee hired.
+- [Task 11]. Write a query that displays the EmployeeID of the penultimate employee hired by the company. Use the keywords OFFSET and FETCH.
+- [Task 12]. Write a query that displays the total freight of orders for customer companies for orders whose freight cost is greater than or equal to the average freight cost of all orders, as well as the date of shipment of the order should be in the second half of July 1996. The resulting table should have columns CustomerID and FreightSum, the rows of which should be sorted by the sum of the freight orders.
+- [Task 13]. Write a query that displays the 3 orders with the highest value that were created after September 1, 1997 inclusive and were delivered to South America. The total cost is calculated as the sum of the cost of the order details, taking into account the discount. The resulting table should have columns CustomerID, ShipCountry and OrderPrice, the rows of which should be sorted by order value in the reverse order.
+- [Task 14]. Rewrite the query:
 ```
 SELECT DISTINCT s.CompanyName,
 (SELECT min(t.UnitPrice) FROM dbo.Products as t WHERE t.SupplierID = p.SupplierID) as MinPrice,
@@ -24,6 +23,6 @@ FROM dbo.Products AS p
 INNER JOIN dbo.Suppliers AS s ON p.SupplierID = s.SupplierID
 ORDER BY s.CompanyName
 ```
-- [Task 15](Task15.sql). Write a query to display customer companies from London, which placed orders with employees of the London office and placed delivery using Speedy Express shipper. The resulting table should contain columns Customer and Employee, Employee column should contain FirstName and LastName of the employee.
-- [Task 16](Task16.sql). Write a query to display products of categories Beverages and Seafood, which are possible to order from suppliers (Discontinued) and number of units in stock is less than 20. The resulting table should contain columns ProductName, UnitsInStock, ContactName and Phone of the supplier. The results should be sorted by number of units in stock.
-
+ using grouping.
+- [Task 15]. Write a request that displays a list of customer companies from London who ordered from the London office and ordered delivery through Speedy Express. The resulting table should have the Customer and Employee columns, the Employee column should contain the FirstName and LastName of the employee.
+- [Task 16]. Write a query that displays a list of products from the Beverages and Seafood categories that can be ordered from suppliers (Discontinued) and which have remained in stock in quantities of less than 20 pieces. The resulting table must have the columns ProductName, UnitsInStock, ContactName, and Phone provider. Table rows must be sorted by stock value.
