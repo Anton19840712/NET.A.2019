@@ -1,6 +1,6 @@
 ## NET.A.2019.Gridushko. Additional sql tasks.
 
-- [Task 01].(01 Task.sql) Write a query that displays a list of customers in a table consisting of two columns, CustomerID and CompanyName. Table rows must be sorted by customer code.
+- [Task 01].(https://github.com/Anton19840712/NET.W.2019/blob/master/1.%20Additional%20task%20-%20Sql%20queries/01%20Task.sql) Write a query that displays a list of customers in a table consisting of two columns, CustomerID and CompanyName. Table rows must be sorted by customer code.
 - [Task 02]. Write a query that displays the EmployeeID of the last employee hired by the company.
 - [Task 03]. Write a query that lists all countries from the dbo.Customers.Country column. The list should be sorted in alphabetical order, should contain only unique values ??and should not contain duplicates.
 - [Task 04]. Write a query that displays a list of names of customer companies located in the following cities: Berlin, London, Madrid, Brussels, Paris. The list should be sorted by company identifier in reverse alphabetical order.
