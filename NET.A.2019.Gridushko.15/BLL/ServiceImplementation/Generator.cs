@@ -3,10 +3,6 @@ using System;
 
 namespace NET.A._2019.Gridushko._15
 {
-
-    /// <summary>
-    /// Provides method for id generate.
-    /// </summary>
     public class Generator : IGenerator
     {
 

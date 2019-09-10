@@ -1,9 +1,5 @@
 ﻿namespace NET.A._2019.Gridushko._15
-
 {
-    /// <summary>
-    /// Implements an adapter for the account.
-    /// </summary>
     public static class BankAccountMapper
     {
         public static Account ToAccount(this BankAccount bankAccount)
@@ -29,7 +25,6 @@
             {
                 return null;
             }
-
             return new BankAccount(
                 account.Id,
                 account.NameOwner,

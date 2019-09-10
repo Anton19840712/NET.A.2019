@@ -128,7 +128,6 @@ namespace NET.A._2019.Gridushko._15
             writer.Close();
             file.Close();
         }
-
         private void AppendDataToFile(Account account)
         {
             if (ReferenceEquals(null, account))

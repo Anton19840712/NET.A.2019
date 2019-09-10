@@ -13,17 +13,13 @@ namespace NET.A._2019.Gridushko._15
             Resolver = new StandardKernel();
             Resolver.ConfigureResolver();
         }
-
         public static void Main(string[] args)
         {
             IBankAccountService accountService = Resolver.Get<IBankAccountService>();
 
-            accountService.Open("Videneeva", "Anna", 100, GradingVariant.Gold);
-            accountService.Open("Frolov", "Slava", 200, GradingVariant.Platinum);
-            accountService.Open("Ageeva", "Alina", 300, GradingVariant.Base);
-            accountService.Open("Stupen", "Maria", 400, GradingVariant.Gold);
-            accountService.Open("Eroshencova", "Polina", 500, GradingVariant.Base);
-            accountService.Open("Kutircina", "Elizaveta", 600, GradingVariant.Platinum);
+            accountService.Open("Ivanov", "Ivan", 400, GradingVariant.Gold);
+            accountService.Open("Petrov", "Anton", 500, GradingVariant.Base);
+            accountService.Open("Frolov", "Ignat", 600, GradingVariant.Platinum);
 
             Display(accountService);
 

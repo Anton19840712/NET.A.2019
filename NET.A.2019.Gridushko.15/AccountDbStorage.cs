@@ -2,9 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 
-
 namespace NET.A._2019.Gridushko._15
-
 {
     public class AccountsDbStorage : IRepository
     {

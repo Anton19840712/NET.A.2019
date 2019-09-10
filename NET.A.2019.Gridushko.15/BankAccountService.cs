@@ -7,7 +7,6 @@ namespace NET.A._2019.Gridushko._15
 {
      public class BankAccountService : IBankAccountService
     {
-  
         private IGenerator generator;
         private IRepository repository;
         private IBonusCounter bonusCounter;
