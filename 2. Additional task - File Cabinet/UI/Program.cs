@@ -19,8 +19,7 @@ namespace ConsoleApp1
         [STAThread]
         static void Main(string[] args)
         {
-
-
+            log.Info("Application was started!");
             MenuPanels.WriteInputGreeeting();
 
             while (true)

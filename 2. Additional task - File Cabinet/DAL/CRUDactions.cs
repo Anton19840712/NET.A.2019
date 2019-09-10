@@ -7,6 +7,7 @@ namespace FileCabinet
     /// <summary>
     /// Class contains basic CRUD logic
     /// </summary>
+
     public class CRUDactions
     {
         /// <summary>
