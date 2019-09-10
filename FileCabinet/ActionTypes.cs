@@ -2,14 +2,14 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AdditionConsolPlusSQLTasks
+namespace FileCabinet
 {
     public class ActionTypes
     {
         /// <summary>
         /// String massive of available commands in application: listcommands
         /// </summary>
-        public static string[] listcommands = new string[14]
+        public static string[] listcommands = new string[16]
          {
             "list id",
             "firstname",
@@ -24,6 +24,8 @@ namespace AdditionConsolPlusSQLTasks
             "purge",
             "export xml",
             "export csv",
+            "import xml",
+            "import csv",
             "exit"
          };
     }

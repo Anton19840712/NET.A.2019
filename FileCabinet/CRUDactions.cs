@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdditionConsolPlusSQLTasks
+namespace FileCabinet
 {
     /// <summary>
     /// Class contains basic CRUD logic
     /// </summary>
-    public class OperationsCRUD
+    public class CRUDactions
     {
         /// <summary>
         /// Method shows all records in table
@@ -51,7 +51,7 @@ namespace AdditionConsolPlusSQLTasks
                 BirthDate = person.BirthDate,
             });
             Console.WriteLine("Record like: \n");
-            Printers.PrintEditPerson(person);
+            PrintMethods.PrintEditPerson(person);
             Console.WriteLine("Was created successfully!\n");
         }
         /// <summary>
@@ -85,7 +85,7 @@ namespace AdditionConsolPlusSQLTasks
             }
         }
         /// <summary>
-        /// Methods edits Person information
+        /// Method edits Person information
         /// </summary>
         /// <param name="persons"></param>
         /// <param name="lastValue"></param>
@@ -99,7 +99,7 @@ namespace AdditionConsolPlusSQLTasks
 
                     var person = new Person { Id = persons[i].Id, Firstname = persons[i].Firstname, Lastname = persons[i].Lastname, BirthDate = persons[i].BirthDate };
 
-                    Printers.PrintEditPerson(person);
+                    PrintMethods.PrintEditPerson(person);
 
                     MenuPanels.WriteInputNumberUpdateMenu();
                     int result = Convert.ToInt16(Console.ReadLine());
@@ -111,9 +111,8 @@ namespace AdditionConsolPlusSQLTasks
                                 Console.WriteLine("Insert another firstname:");
                                 string anotherFirstname = Console.ReadLine();
                                 persons[i].Firstname = anotherFirstname;
-                                Console.WriteLine("\nNew person info looks like:\n{0} {1} {2} {3}", persons[i].Id, persons[i].Firstname, persons[i].Lastname, persons[i].BirthDate);
-                                //PrintEditPerson(ref person);
-                                Console.WriteLine("and edited successfully!");
+                                MenuPanels.WriteResultOfEditions();
+                                PrintMethods.PrintEditPerson(person);
                                 break;
                             }
                         case 2:
@@ -121,8 +120,8 @@ namespace AdditionConsolPlusSQLTasks
                                 Console.WriteLine("Insert another lastname:");
                                 string anotherLastname = Console.ReadLine();
                                 persons[i].Lastname = anotherLastname;
-                                Console.WriteLine("\nNew person info looks like:\n{0} {1} {2} {3}", persons[i].Id, persons[i].Firstname, persons[i].Lastname, persons[i].BirthDate);
-                                Console.WriteLine("And edited successfully!");
+                                MenuPanels.WriteResultOfEditions();
+                                PrintMethods.PrintEditPerson(person);
                                 break;
                             }
                         case 3:
@@ -130,8 +129,8 @@ namespace AdditionConsolPlusSQLTasks
                                 Console.WriteLine("Insert another birth of date:");
                                 DateTime anotherBirtdate = DateTime.Parse(Console.ReadLine());
                                 persons[i].BirthDate = anotherBirtdate;
-                                Console.WriteLine("\nNew person info looks like:\n{0} {1} {2} {3}", persons[i].Id, persons[i].Firstname, persons[i].Lastname, persons[i].BirthDate);
-                                Console.WriteLine("And edited successfully!");
+                                MenuPanels.WriteResultOfEditions();
+                                PrintMethods.PrintEditPerson(person);
                                 break;
                             }
                         default:

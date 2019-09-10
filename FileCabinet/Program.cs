@@ -1,22 +1,26 @@
-﻿using AdditionConsolPlusSQLTasks.DAL;
+﻿using FileCabinet;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace AdditionConsolPlusSQLTasks
+
+namespace ConsoleApp1
 {
     /// <summary>
     /// Initial class of application
     /// </summary>
-    class Program
+    public class Program
     {
         /// <summary>
         /// Method implements split logic for incoming commands
         /// Enables to redirect implementaion of commands in next operation methods using switch operator
         /// </summary>
         /// <param name="args"></param>
+        [STAThread]
         static void Main(string[] args)
         {
+
+
             MenuPanels.WriteInputGreeeting();
 
             while (true)
@@ -24,7 +28,7 @@ namespace AdditionConsolPlusSQLTasks
                 MenuPanels.WriteInputLine();
                 MenuPanels.WriteInputCommandMainMenu();
 
-                string[] commandsList = Console.ReadLine().Split(", ");
+                string[] commandsList = Console.ReadLine().Split(new string[] { ", " }, StringSplitOptions.None);
 
                 foreach (string stringElement in commandsList)
                 {
@@ -34,7 +38,7 @@ namespace AdditionConsolPlusSQLTasks
 
                     if (resultElements.Count() == 2 && lastValue != "csv" && lastValue != "xml" || resultElements.Count() == 3)
                     {
-                        string[] arr = resultCommand.Trim().Split(null);//
+                        string[] arr = resultCommand.Trim().Split(null);
                         arr = arr.Where((o, i) => i != arr.Length - 1).ToArray();
                         resultCommand = string.Join(" ", arr);
                     }
@@ -47,62 +51,72 @@ namespace AdditionConsolPlusSQLTasks
                         {
                             case "list":
                                 {
-                                    Printers.PrintPersons(PersonCollections.AlluserDatas);
+                                    PrintMethods.PrintPersons(PersonCollections.AlluserDatas);
                                     break;
                                 }
                             case "list id":
                                 {
-                                    Printers.PrintWholeId(PersonCollections.AlluserDatas);
+                                    PrintMethods.PrintWholeId(PersonCollections.AlluserDatas);
                                     break;
                                 }
                             case "stat":
                                 {
-                                    OperationsExtra.Counter(PersonCollections.AlluserDatas);
+                                    EXTRAactions.Counter(PersonCollections.AlluserDatas);
                                     break;
                                 }
                             case "firstname":
                                 {
-                                    OperationsCRUD.Firstname(PersonCollections.AlluserDatas, lastValue);
+                                    CRUDactions.Firstname(PersonCollections.AlluserDatas, lastValue);
                                     break;
                                 }
                             case "lastname":
                                 {
-                                    OperationsCRUD.Lastname(PersonCollections.AlluserDatas, lastValue);
+                                    CRUDactions.Lastname(PersonCollections.AlluserDatas, lastValue);
                                     break;
                                 }
                             case "create":
                                 {
-                                    OperationsCRUD.Create(PersonCollections.AlluserDatas);
+                                    CRUDactions.Create(PersonCollections.AlluserDatas);
                                     break;
                                 }
                             case "edit":
                                 {
-                                    OperationsCRUD.Edit(PersonCollections.AlluserDatas, lastValue);
+                                    CRUDactions.Edit(PersonCollections.AlluserDatas, lastValue);
                                     break;
                                 }
                             case "remove":
                                 {
-                                    OperationsCRUD.Remove(PersonCollections.AlluserDatas, lastValue);
+                                    CRUDactions.Remove(PersonCollections.AlluserDatas, lastValue);
                                     break;
                                 }
                             case "purge":
                                 {
-                                    OperationsCRUD.Purge(PersonCollections.AlluserDatas);
+                                    CRUDactions.Purge(PersonCollections.AlluserDatas);
                                     break;
                                 }
                             case "export xml":
                                 {
-                                    OperationsExtra.ExportXML(PersonCollections.AlluserDatas, lastValue);
+                                    EXTRAactions.ExportXML(PersonCollections.AlluserDatas, lastValue);
                                     break;
                                 }
                             case "export csv":
                                 {
-                                    OperationsExtra.ExportCSV(PersonCollections.AlluserDatas, lastValue);
+                                    EXTRAactions.ExportCSV(PersonCollections.AlluserDatas, lastValue);
+                                    break;
+                                }
+                            case "import xml":
+                                {
+                                    EXTRAactions.ImportXML();
+                                    break;
+                                }
+                            case "import csv":
+                                {
+                                    EXTRAactions.ImportCSV();
                                     break;
                                 }
                             case "exit":
                                 {
-                                    OperationsExtra.LeaveEnvironment();
+                                    EXTRAactions.LeaveEnvironment();
                                     break;
                                 }
                             default:
@@ -116,3 +130,4 @@ namespace AdditionConsolPlusSQLTasks
         }
     }
 }
+

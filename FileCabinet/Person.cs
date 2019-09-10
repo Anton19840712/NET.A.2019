@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Xml.Serialization;
 
-namespace AdditionConsolPlusSQLTasks
+namespace FileCabinet
 {
     /// <summary>
     /// Class of Person with fields and [attridutes] for designed XML serialization

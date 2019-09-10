@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace AdditionConsolPlusSQLTasks
+namespace FileCabinet
 {
     /// <summary>
-    /// Class consists of several menus, enable user to make his own choice 
-    /// to continue application using
+    /// Class consists of several menus, they enable user to make his own choice 
+    /// to continue application usage
     /// </summary>
     public class MenuPanels
     {
@@ -43,6 +43,8 @@ namespace AdditionConsolPlusSQLTasks
             Console.WriteLine("purge - cleans out all data in collection");
             Console.WriteLine("export xml/export xml yourfilename.xml - exports all elements of collection in xml format, saves and stores");
             Console.WriteLine("export csv/export csv yourfilename.csv - exports all elements of collection in csv format, saves and stores");
+            Console.WriteLine("import xml yourfilename.xml - imports all elements of collection from xml format and shows in console");
+            Console.WriteLine("import csv yourfilename.csv - imports all elements of collection in csv format and shows in console");
             Console.WriteLine("exit - enables to leave catalog\n");
 
             Console.WriteLine("Enter Your Choice:\n");
@@ -50,7 +52,7 @@ namespace AdditionConsolPlusSQLTasks
             Console.Write(">");
         }
         /// <summary>
-        /// Edition menu to edit records of dataset
+        /// Menu to choose records of dataset for change
         /// </summary>
         public static void WriteInputNumberUpdateMenu()
         {
@@ -58,6 +60,14 @@ namespace AdditionConsolPlusSQLTasks
             Console.WriteLine("1 - Change firstname");
             Console.WriteLine("2 - Change lastname");
             Console.WriteLine("3 - Change date of birth");
+        }
+        /// <summary>
+        /// Result text to show, all Ok with eddition
+        /// </summary>
+        public static void WriteResultOfEditions()
+        {
+            Console.WriteLine("\nNew person edited successfully!");
+            Console.WriteLine("\nAnd looks like: ");
         }
     }
 }

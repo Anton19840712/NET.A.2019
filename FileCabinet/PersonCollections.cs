@@ -2,9 +2,12 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AdditionConsolPlusSQLTasks.DAL
+namespace FileCabinet
 {
-    class PersonCollections
+    /// <summary>
+    /// Class contains initial info to work with when application starts
+    /// </summary>
+    internal class PersonCollections
     {
         public static IList<Person> AlluserDatas { get; set; }
         static PersonCollections()

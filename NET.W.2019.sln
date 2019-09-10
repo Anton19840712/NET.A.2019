@@ -45,7 +45,30 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET.W.2019.Gridushko.19", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NET.W.2019.Gridushko.20", "NET.W.2019.Gridushko.20\NET.W.2019.Gridushko.20.csproj", "{6A3224D2-87E4-4DF8-BC42-F77D018BF731}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AdditionConsolPlusSQLTasks", "AdditionConsolPlusSQLTasks\AdditionConsolPlusSQLTasks.csproj", "{96C2E24D-0FDB-4A8E-A9C2-D81A8FF402D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FileCabinet", "FileCabinet\FileCabinet.csproj", "{3EA3595F-3C0D-4BD0-926D-EC26599EC3BF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2. Additional task - File Cabinet", "2. Additional task - File Cabinet", "{3D52E524-0A64-45FF-B7D8-1193C07C75D1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1. Additional task - Sql queries", "1. Additional task - Sql queries", "{8DA11790-96F9-476C-B0B2-B52DF3F3F99D}"
+	ProjectSection(SolutionItems) = preProject
+		D:\Мои документы\Загрузки\01 Task.sql = D:\Мои документы\Загрузки\01 Task.sql
+		D:\Мои документы\Загрузки\02 Task.sql = D:\Мои документы\Загрузки\02 Task.sql
+		D:\Мои документы\Загрузки\03 Task.sql = D:\Мои документы\Загрузки\03 Task.sql
+		D:\Мои документы\Загрузки\04 Task.sql = D:\Мои документы\Загрузки\04 Task.sql
+		D:\Мои документы\Загрузки\05 Task.sql = D:\Мои документы\Загрузки\05 Task.sql
+		D:\Мои документы\Загрузки\06 Task.sql = D:\Мои документы\Загрузки\06 Task.sql
+		D:\Мои документы\Загрузки\07 Task.sql = D:\Мои документы\Загрузки\07 Task.sql
+		D:\Мои документы\Загрузки\08 Task.sql = D:\Мои документы\Загрузки\08 Task.sql
+		D:\Мои документы\Загрузки\09 Task.sql = D:\Мои документы\Загрузки\09 Task.sql
+		D:\Мои документы\Загрузки\10 Task.sql = D:\Мои документы\Загрузки\10 Task.sql
+		D:\Мои документы\Загрузки\11 Task.sql = D:\Мои документы\Загрузки\11 Task.sql
+		D:\Мои документы\Загрузки\12 Task.sql = D:\Мои документы\Загрузки\12 Task.sql
+		D:\Мои документы\Загрузки\13 Task.sql = D:\Мои документы\Загрузки\13 Task.sql
+		D:\Мои документы\Загрузки\14 Task.sql = D:\Мои документы\Загрузки\14 Task.sql
+		D:\Мои документы\Загрузки\15 Task.sql = D:\Мои документы\Загрузки\15 Task.sql
+		D:\Мои документы\Загрузки\16 Task.sql = D:\Мои документы\Загрузки\16 Task.sql
+		Sql queries.cs = Sql queries.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -137,13 +160,16 @@ Global
 		{6A3224D2-87E4-4DF8-BC42-F77D018BF731}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6A3224D2-87E4-4DF8-BC42-F77D018BF731}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6A3224D2-87E4-4DF8-BC42-F77D018BF731}.Release|Any CPU.Build.0 = Release|Any CPU
-		{96C2E24D-0FDB-4A8E-A9C2-D81A8FF402D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{96C2E24D-0FDB-4A8E-A9C2-D81A8FF402D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{96C2E24D-0FDB-4A8E-A9C2-D81A8FF402D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{96C2E24D-0FDB-4A8E-A9C2-D81A8FF402D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3EA3595F-3C0D-4BD0-926D-EC26599EC3BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3EA3595F-3C0D-4BD0-926D-EC26599EC3BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3EA3595F-3C0D-4BD0-926D-EC26599EC3BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3EA3595F-3C0D-4BD0-926D-EC26599EC3BF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3EA3595F-3C0D-4BD0-926D-EC26599EC3BF} = {3D52E524-0A64-45FF-B7D8-1193C07C75D1}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {0CE3EA86-EC35-40C3-B246-9667C869A78B}

@@ -4,14 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace AdditionConsolPlusSQLTasks
+namespace FileCabinet
 
 {
     /// <summary>
-    /// Class that enables to print catalog info using elegent frames in tables to look data nice. 
+    /// Class that enables to print catalog info to look it nice. 
     /// Consists of different checks and several help methods.
     /// </summary>
-    public class ConsoleTable
+    public class TableFramer
     {
         public IList<object> Columns { get; set; }
         public IList<object[]> Rows { get; protected set; }
@@ -27,26 +27,26 @@ namespace AdditionConsolPlusSQLTasks
             typeof(uint), typeof(float)
         };
 
-        public ConsoleTable(params string[] columns)
+        public TableFramer(params string[] columns)
             : this(new ConsoleTableOptions { Columns = new List<string>(columns) })
         {
         }
 
-        public ConsoleTable(ConsoleTableOptions options)
+        public TableFramer(ConsoleTableOptions options)
         {
             Options = options ?? throw new ArgumentNullException("options");
             Rows = new List<object[]>();
             Columns = new List<object>(options.Columns);
         }
 
-        public ConsoleTable AddColumn(IEnumerable<string> names)
+        public TableFramer AddColumn(IEnumerable<string> names)
         {
             foreach (var name in names)
                 Columns.Add(name);
             return this;
         }
 
-        public ConsoleTable AddRow(params object[] values)
+        public TableFramer AddRow(params object[] values)
         {
             if (values == null)
                 throw new ArgumentNullException(nameof(values));
@@ -62,15 +62,15 @@ namespace AdditionConsolPlusSQLTasks
             return this;
         }
 
-        public ConsoleTable Configure(Action<ConsoleTableOptions> action)
+        public TableFramer Configure(Action<ConsoleTableOptions> action)
         {
             action(Options);
             return this;
         }
 
-        public static ConsoleTable From<T>(IEnumerable<T> values)
+        public static TableFramer From<T>(IEnumerable<T> values)
         {
-            var table = new ConsoleTable
+            var table = new TableFramer
             {
                 ColumnTypes = GetColumnsType<T>().ToArray()
             };
@@ -240,20 +240,20 @@ namespace AdditionConsolPlusSQLTasks
             return columnLengths;
         }
 
-        public void Write(Format format = AdditionConsolPlusSQLTasks.Format.Default)
+        public void Write(Format format = FileCabinet.Format.Default)
         {
             switch (format)
             {
-                case AdditionConsolPlusSQLTasks.Format.Default:
+                case FileCabinet.Format.Default:
                     Console.WriteLine(ToString());
                     break;
-                case AdditionConsolPlusSQLTasks.Format.MarkDown:
+                case FileCabinet.Format.MarkDown:
                     Console.WriteLine(ToMarkDownString());
                     break;
-                case AdditionConsolPlusSQLTasks.Format.Alternative:
+                case FileCabinet.Format.Alternative:
                     Console.WriteLine(ToStringAlternative());
                     break;
-                case AdditionConsolPlusSQLTasks.Format.Minimal:
+                case FileCabinet.Format.Minimal:
                     Console.WriteLine(ToMinimalString());
                     break;
                 default:
