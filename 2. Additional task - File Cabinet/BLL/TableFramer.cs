@@ -8,8 +8,7 @@ namespace FileCabinet
 
 {
     /// <summary>
-    /// Class that enables to print catalog info to look it nice. 
-    /// Consists of different checks and several help methods.
+    /// Class that enables to print catalog info nice. 
     /// </summary>
     public class TableFramer
     {

@@ -17,9 +17,9 @@ namespace NET.A._2019.Gridushko._15
         {
             IBankAccountService accountService = Resolver.Get<IBankAccountService>();
 
-            accountService.Open("Ivanov", "Ivan", 400, GradingVariant.Gold);
-            accountService.Open("Petrov", "Anton", 500, GradingVariant.Base);
-            accountService.Open("Frolov", "Ignat", 600, GradingVariant.Platinum);
+            //accountService.Open("Ivanov", "Ivan", 400, GradingVariant.Gold);
+            //accountService.Open("Petrov", "Anton", 500, GradingVariant.Base);
+            //accountService.Open("Frolov", "Ignat", 600, GradingVariant.Platinum);
 
             Display(accountService);
 

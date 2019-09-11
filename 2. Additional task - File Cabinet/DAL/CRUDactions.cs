@@ -16,6 +16,7 @@ namespace FileCabinet
         /// <param name="obj"></param>
         /// <param name="identis"></param>
         /// <returns></returns>
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static object GetPersons(object obj, int identis)
         {
             var person = obj as Person;
@@ -51,6 +52,7 @@ namespace FileCabinet
                 Lastname = person.Lastname,
                 BirthDate = person.BirthDate,
             });
+            log.Info("Person was created");
             Console.WriteLine("Record like: \n");
             PrintMethods.PrintEditPerson(person);
             Console.WriteLine("Was created successfully!\n");
@@ -142,6 +144,7 @@ namespace FileCabinet
                                 break;
                             }
                     }
+                    log.Info("Person was edited");
                     break;
                 }
             }
@@ -160,7 +163,6 @@ namespace FileCabinet
                     persons.RemoveAt(i);
                 }
             }
-
             Console.WriteLine("\nRecord #{0} is removed", lastValue);
         }
         /// <summary>

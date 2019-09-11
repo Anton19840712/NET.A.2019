@@ -1,21 +1,24 @@
-﻿using FileCabinet;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 
+[assembly: log4net.Config.XmlConfigurator(Watch = true)]
 
 namespace FileCabinet
 {
     /// <summary>
     /// Initial class of application
     /// </summary>
+    
     public class Program
     {
         /// <summary>
         /// Method implements split logic for incoming commands
         /// Enables to redirect implementaion of commands in next operation methods using switch operator
         /// </summary>
-        /// <param name="args"></param>
+
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         [STAThread]
         static void Main(string[] args)
         {
@@ -51,6 +54,7 @@ namespace FileCabinet
                             case "list":
                                 {
                                     PrintMethods.PrintPersons(PersonCollections.AlluserDatas);
+                                    log.Info("Info listed");
                                     break;
                                 }
                             case "list id":
@@ -61,16 +65,19 @@ namespace FileCabinet
                             case "stat":
                                 {
                                     EXTRAactions.Counter(PersonCollections.AlluserDatas);
+                                    log.Info("Info stat");
                                     break;
                                 }
                             case "firstname":
                                 {
                                     CRUDactions.Firstname(PersonCollections.AlluserDatas, lastValue);
+                                    log.Info("Info firstname");
                                     break;
                                 }
                             case "lastname":
                                 {
                                     CRUDactions.Lastname(PersonCollections.AlluserDatas, lastValue);
+                                    log.Info("Info lastname");
                                     break;
                                 }
                             case "create":
@@ -91,26 +98,31 @@ namespace FileCabinet
                             case "purge":
                                 {
                                     CRUDactions.Purge(PersonCollections.AlluserDatas);
+                                    log.Info("Info purged");
                                     break;
                                 }
                             case "export xml":
                                 {
                                     EXTRAactions.ExportXML(PersonCollections.AlluserDatas, lastValue);
+                                    log.Info("Info export xml");
                                     break;
                                 }
                             case "export csv":
                                 {
                                     EXTRAactions.ExportCSV(PersonCollections.AlluserDatas, lastValue);
+                                    log.Info("Info export csv");
                                     break;
                                 }
                             case "import xml":
                                 {
                                     EXTRAactions.ImportXML();
+                                    log.Info("Info imports xml");
                                     break;
                                 }
                             case "import csv":
                                 {
                                     EXTRAactions.ImportCSV();
+                                    log.Info("Info imports csv");
                                     break;
                                 }
                             case "exit":

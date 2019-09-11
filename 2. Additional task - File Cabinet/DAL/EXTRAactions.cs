@@ -11,8 +11,11 @@ namespace FileCabinet
     /// <summary>
     /// Additional application commands that are not CRUD operations
     /// </summary>
+    
     public class EXTRAactions
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         /// <summary>
         /// Counts records in database
         /// </summary>
@@ -34,6 +37,7 @@ namespace FileCabinet
         /// </summary>
         public static void LeaveEnvironment()
         {
+            log.Info("Application exit");
             Environment.Exit(0);
         }
         /// <summary>
