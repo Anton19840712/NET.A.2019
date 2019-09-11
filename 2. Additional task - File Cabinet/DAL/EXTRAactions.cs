@@ -5,6 +5,7 @@ using System.Xml.Serialization;
 using System.Linq;
 using CsvHelper;
 using System.Windows.Forms;
+using FileCabinet;
 
 namespace FileCabinet
 {
@@ -111,16 +112,7 @@ namespace FileCabinet
 
                 if (File.Exists(filename))
                 {
-                    string xml = File.ReadAllText(filename);
-                    List<Person> person = new List<Person>();
-                    var serializer = new XmlSerializer(person.GetType());
-
-                    using (TextReader reader = new StringReader(xml))
-                    {
-                        person = (List<Person>)serializer.Deserialize(reader);
-                    }
-                    PersonCollections.AlluserDatas = person;
-                    PrintMethods.PrintImported(person);
+                    Readers.ReaderXml(filename);
                 }
             }
         }
@@ -138,36 +130,10 @@ namespace FileCabinet
                 if (dialog.ShowDialog() == DialogResult.OK)
                 {
                     filename = dialog.FileName;
-                    string line;
+
                     if (File.Exists(filename))
                     {
-                        StreamReader file = null;
-                        try
-                        {
-                            file = new StreamReader(filename);
-                            IList<Person> person = new List<Person>();
-                            file.ReadLine();
-                            while ((line = file.ReadLine()) != null)
-                            {
-                                string[] superLine = line.Split(',');
-
-                                var element = new Person();
-
-                                element.Id = int.Parse(superLine[0]);
-                                element.Firstname = superLine[1];
-                                element.Lastname = superLine[2];
-                                element.BirthDate = DateTime.Parse(superLine[3]);
-
-                                person.Add(element);
-                            }
-                            PersonCollections.AlluserDatas = person;
-                            PrintMethods.PrintImported(person);
-                        }
-                        finally
-                        {
-                            if (file != null)
-                                file.Close();
-                        }
+                        Readers.ReaderCsv(filename);
                     }
                 }
                 else
