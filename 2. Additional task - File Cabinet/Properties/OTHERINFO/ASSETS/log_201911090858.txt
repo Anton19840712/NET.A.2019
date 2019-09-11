@@ -1,0 +1,5 @@
+2019-09-11 20:58:24,057 [1] INFO  FileCabinet.CRUDactions LINE NUMBER - 147 58849 PC\User - Person was edited
+2019-09-11 20:58:30,298 [1] INFO  FileCabinet.Program LINE NUMBER - 57 65090 PC\User - Info listed
+2019-09-11 20:58:38,084 [1] INFO  FileCabinet.Program LINE NUMBER - 113 72877 PC\User - Info export csv
+2019-09-11 20:58:50,173 [1] INFO  FileCabinet.Program LINE NUMBER - 125 84966 PC\User - Info imports csv
+2019-09-11 20:58:55,339 [1] INFO  FileCabinet.Program LINE NUMBER - 57 90132 PC\User - Info listed

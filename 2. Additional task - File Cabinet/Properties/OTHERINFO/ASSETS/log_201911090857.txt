@@ -1,0 +1,5 @@
+2019-09-11 20:57:25,579 [1] INFO  FileCabinet.Program LINE NUMBER - 25 372 PC\User - Application was started!
+2019-09-11 20:57:31,565 [1] INFO  FileCabinet.Program LINE NUMBER - 57 6358 PC\User - Info listed
+2019-09-11 20:57:33,782 [1] INFO  FileCabinet.Program LINE NUMBER - 68 8574 PC\User - Info stat
+2019-09-11 20:57:54,509 [1] INFO  FileCabinet.CRUDactions LINE NUMBER - 55 29302 PC\User - Person was created
+2019-09-11 20:57:59,803 [1] INFO  FileCabinet.Program LINE NUMBER - 57 34595 PC\User - Info listed

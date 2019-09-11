@@ -1,0 +1,1 @@
+2019-09-11 20:59:01,589 [1] INFO  FileCabinet.EXTRAactions LINE NUMBER - 40 96382 PC\User - Application exit
