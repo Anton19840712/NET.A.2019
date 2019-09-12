@@ -49,92 +49,26 @@ namespace FileCabinet
 
                     if (true)
                     {
-                        switch (resultCommand)
+                        Dictionary<string, Action> dict = new Dictionary<string, Action>
                         {
-                            case "list":
-                                {
-                                    PrintMethods.PrintPersons(PersonCollections.AlluserDatas);
-                                    log.Info("Info listed");
-                                    break;
-                                }
-                            case "list id":
-                                {
-                                    PrintMethods.PrintWholeId(PersonCollections.AlluserDatas);
-                                    break;
-                                }
-                            case "stat":
-                                {
-                                    EXTRAactions.Counter(PersonCollections.AlluserDatas);
-                                    log.Info("Info stat");
-                                    break;
-                                }
-                            case "firstname":
-                                {
-                                    CRUDactions.Firstname(PersonCollections.AlluserDatas, lastValue);
-                                    log.Info("Info firstname");
-                                    break;
-                                }
-                            case "lastname":
-                                {
-                                    CRUDactions.Lastname(PersonCollections.AlluserDatas, lastValue);
-                                    log.Info("Info lastname");
-                                    break;
-                                }
-                            case "create":
-                                {
-                                    CRUDactions.Create(PersonCollections.AlluserDatas);
-                                    break;
-                                }
-                            case "edit":
-                                {
-                                    CRUDactions.Edit(PersonCollections.AlluserDatas, lastValue);
-                                    break;
-                                }
-                            case "remove":
-                                {
-                                    CRUDactions.Remove(PersonCollections.AlluserDatas, lastValue);
-                                    break;
-                                }
-                            case "purge":
-                                {
-                                    CRUDactions.Purge(PersonCollections.AlluserDatas);
-                                    log.Info("Info purged");
-                                    break;
-                                }
-                            case "export xml":
-                                {
-                                    EXTRAactions.ExportXML(PersonCollections.AlluserDatas, lastValue);
-                                    log.Info("Info export xml");
-                                    break;
-                                }
-                            case "export csv":
-                                {
-                                    EXTRAactions.ExportCSV(PersonCollections.AlluserDatas, lastValue);
-                                    log.Info("Info export csv");
-                                    break;
-                                }
-                            case "import xml":
-                                {
-                                    EXTRAactions.ImportXML();
-                                    log.Info("Info imports xml");
-                                    break;
-                                }
-                            case "import csv":
-                                {
-                                    EXTRAactions.ImportCSV();
-                                    log.Info("Info imports csv");
-                                    break;
-                                }
-                            case "exit":
-                                {
-                                    EXTRAactions.LeaveEnvironment();
-                                    break;
-                                }
-                            default:
-                                {
-                                    break;
-                                }
-                        }
+                            ["list"] = () => PrintMethods.PrintPersons(PersonCollections.AlluserDatas),
+                            ["list id"] = () => PrintMethods.PrintWholeId(PersonCollections.AlluserDatas),
+                            ["firstname"] = () => CRUDactions.Firstname(PersonCollections.AlluserDatas, lastValue),
+                            ["lastname"] = () => CRUDactions.Lastname(PersonCollections.AlluserDatas, lastValue),
+                            ["create"] = () => CRUDactions.Create(PersonCollections.AlluserDatas),
+                            ["edit"] = () => CRUDactions.Edit(PersonCollections.AlluserDatas, lastValue),
+                            ["remove"] = () => CRUDactions.Remove(PersonCollections.AlluserDatas, lastValue),
+                            ["purge"] = () => CRUDactions.Purge(PersonCollections.AlluserDatas),
+                            ["export xml"] = () => EXTRAactions.ExportXML(PersonCollections.AlluserDatas, lastValue),
+                            ["export csv"] = () => EXTRAactions.ExportCSV(PersonCollections.AlluserDatas, lastValue),
+                            ["import xml"] = () => EXTRAactions.ImportXML(),
+                            ["import csv"] = () => EXTRAactions.ImportCSV(),
+                            ["exit"] = () => EXTRAactions.LeaveEnvironment(),
+                            ["stat"] = () => EXTRAactions.Counter(PersonCollections.AlluserDatas),
+                        };
+
+                        if (dict.TryGetValue(resultCommand, out Action act))
+                            act();
                     }
                 }
             }

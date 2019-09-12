@@ -7,7 +7,6 @@ namespace FileCabinet
     /// <summary>
     /// Class contains basic CRUD logic
     /// </summary>
-
     public class CRUDactions
     {
         /// <summary>
@@ -52,7 +51,7 @@ namespace FileCabinet
                 Lastname = person.Lastname,
                 BirthDate = person.BirthDate,
             });
-            log.Info("Person was created");
+            log.Info("Person was created!");
             Console.WriteLine("Record like: \n");
             PrintMethods.PrintEditPerson(person);
             Console.WriteLine("Was created successfully!\n");
@@ -164,6 +163,7 @@ namespace FileCabinet
                 }
             }
             Console.WriteLine("\nRecord #{0} is removed", lastValue);
+            log.Info("Person " + lastValue + " was removed");
         }
         /// <summary>
         /// Methods cleans out all inf in database
@@ -173,6 +173,7 @@ namespace FileCabinet
         {
             Console.WriteLine("Purge");
             persons.Clear();
+            log.Info("Collection was purged");
             Console.WriteLine("\nAll data in database was purged successfully!");
         }
     }

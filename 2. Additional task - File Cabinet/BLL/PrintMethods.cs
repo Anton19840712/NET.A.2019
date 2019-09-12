@@ -8,6 +8,7 @@ namespace FileCabinet
     /// </summary>
     public class PrintMethods
     {
+        private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public static void PrintPersons(IEnumerable<Person> persons)
         {
             Console.WriteLine("The whole list of persons\n");
@@ -18,6 +19,7 @@ namespace FileCabinet
                 table.AddRow("#" + person.Id, person.Firstname, person.Lastname, person.BirthDate.ToString("ddd, dd MMMM yyyy"));
             }
             table.Write();
+            log.Info("Info listed");
         }
         public static void PrintEditPerson(Person person)
         {

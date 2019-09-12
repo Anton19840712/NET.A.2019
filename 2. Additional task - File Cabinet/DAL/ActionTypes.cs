@@ -9,15 +9,13 @@ namespace FileCabinet
         /// <summary>
         /// String massive of available commands in application: listcommands
         /// </summary>
-        public static string[] listcommands = new string[16]
+        public static string[] listcommands = new string[14]
          {
             "list id",
             "firstname",
             "lastname",
             "list",
             "stat",
-            "find firstname ",
-            "find lastname",
             "create",
             "edit",
             "remove",

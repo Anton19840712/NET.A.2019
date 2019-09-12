@@ -12,7 +12,6 @@ namespace FileCabinet
     /// <summary>
     /// Additional application commands that are not CRUD operations
     /// </summary>
-    
     public class EXTRAactions
     {
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -32,6 +31,7 @@ namespace FileCabinet
             {
                 Console.WriteLine("\n{0} record", item);
             }
+            log.Info("Count operation");
         }
         /// <summary>
         /// Exit application
@@ -69,6 +69,7 @@ namespace FileCabinet
                     csvReader.WriteRecords(persons);
                 }
             }
+            log.Info("Info csv exported");
             Console.WriteLine("\nFile csv by path {0} was created successfully!", path);
         }
         /// <summary>
@@ -94,7 +95,7 @@ namespace FileCabinet
             StreamWriter sw = new StreamWriter(path);
             xmlSerializer.Serialize(sw, persons);
             sw.Close();
-
+            log.Info("Info xml exported");
             Console.WriteLine("\nFile xml by path {0} was created successfully!", path);
         }
         /// <summary>
@@ -115,6 +116,7 @@ namespace FileCabinet
                     Readers.ReaderXml(filename);
                 }
             }
+            log.Info("Info xml imported");
         }
         /// <summary>
         /// Imports from csv to Console
@@ -145,6 +147,7 @@ namespace FileCabinet
             {
                 throw;
             }
+            log.Info("Info csv imported");
         }
     }
 }
