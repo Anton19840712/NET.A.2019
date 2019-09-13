@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace FileCabinet
+﻿namespace FileCabinet
 {
     /// <summary>
     /// Consists of types of legal application commands
@@ -28,13 +24,6 @@ namespace FileCabinet
             "import xml",
             "import csv",
             "exit"
-         };
-
-        public static int[] editcommands = new int[3]
-         {
-            1,
-            2,
-            3
          };
     }
 }
