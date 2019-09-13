@@ -4,6 +4,9 @@ using System.Text;
 
 namespace FileCabinet
 {
+    /// <summary>
+    /// Consists of types of legal application commands
+    /// </summary>
     public class ActionTypes
     {
         /// <summary>
@@ -25,6 +28,13 @@ namespace FileCabinet
             "import xml",
             "import csv",
             "exit"
+         };
+
+        public static int[] editcommands = new int[3]
+         {
+            1,
+            2,
+            3
          };
     }
 }

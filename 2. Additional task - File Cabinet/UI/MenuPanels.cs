@@ -62,7 +62,7 @@ namespace FileCabinet
             Console.WriteLine("3 - Change date of birth");
         }
         /// <summary>
-        /// Result text to show, all Ok with eddition
+        /// Shows that eddition process was finished
         /// </summary>
         public static void WriteResultOfEditions()
         {

@@ -53,7 +53,7 @@ namespace FileCabinet
             });
             log.Info("Person was created!");
             Console.WriteLine("Record like: \n");
-            PrintMethods.PrintEditPerson(person);
+            Printers.PrintEditPerson(person);
             Console.WriteLine("Was created successfully!\n");
         }
         /// <summary>
@@ -101,50 +101,9 @@ namespace FileCabinet
 
                     var person = new Person { Id = persons[i].Id, Firstname = persons[i].Firstname, Lastname = persons[i].Lastname, BirthDate = persons[i].BirthDate };
 
-                    PrintMethods.PrintEditPerson(person);
-
+                    Printers.PrintEditPerson(person);
                     MenuPanels.WriteInputNumberUpdateMenu();
-                    int result = Convert.ToInt16(Console.ReadLine());
-                    switch (result)
-                    {
-                        case 1:
-                            {
-                                Console.WriteLine("Insert another firstname:");
-                                string anotherFirstname = Console.ReadLine();
-                                persons[i].Firstname = anotherFirstname;
-                                person.Firstname = anotherFirstname;
-                                MenuPanels.WriteResultOfEditions();
-                                PrintMethods.PrintEditPerson(person);
-                                break;
-                            }
-                        case 2:
-                            {
-                                Console.WriteLine("Insert another lastname:");
-                                string anotherLastname = Console.ReadLine();
-                                persons[i].Lastname = anotherLastname;
-                                person.Lastname = anotherLastname;
-                                MenuPanels.WriteResultOfEditions();
-                                PrintMethods.PrintEditPerson(person);
-                                break;
-                            }
-                        case 3:
-                            {
-                                Console.WriteLine("Insert another birth of date:");
-                                DateTime anotherBirtdate = DateTime.Parse(Console.ReadLine());
-                                persons[i].BirthDate = anotherBirtdate;
-                                person.BirthDate = anotherBirtdate;
-                                MenuPanels.WriteResultOfEditions();
-                                PrintMethods.PrintEditPerson(person);
-                                break;
-                            }
-                        default:
-                            {
-                                Console.WriteLine("There is no such case, insert case number, please:");
-                                break;
-                            }
-                    }
-                    log.Info("Person was edited");
-                    break;
+                    DictionaryChoisPanels.EditioncommandChoose(person, persons, i);
                 }
             }
         }

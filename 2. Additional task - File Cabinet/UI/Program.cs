@@ -14,7 +14,7 @@ namespace FileCabinet
     {
         /// <summary>
         /// Method implements split logic for incoming commands
-        /// Enables to redirect implementaion of commands in next operation methods using switch operator
+        /// Enables to redirect implementaion of commands in next operation methods using dictionary
         /// </summary>
 
         private static readonly log4net.ILog log = log4net.LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -49,26 +49,7 @@ namespace FileCabinet
 
                     if (true)
                     {
-                        Dictionary<string, Action> dict = new Dictionary<string, Action>
-                        {
-                            ["list"] = () => PrintMethods.PrintPersons(PersonCollections.AlluserDatas),
-                            ["list id"] = () => PrintMethods.PrintWholeId(PersonCollections.AlluserDatas),
-                            ["firstname"] = () => CRUDactions.Firstname(PersonCollections.AlluserDatas, lastValue),
-                            ["lastname"] = () => CRUDactions.Lastname(PersonCollections.AlluserDatas, lastValue),
-                            ["create"] = () => CRUDactions.Create(PersonCollections.AlluserDatas),
-                            ["edit"] = () => CRUDactions.Edit(PersonCollections.AlluserDatas, lastValue),
-                            ["remove"] = () => CRUDactions.Remove(PersonCollections.AlluserDatas, lastValue),
-                            ["purge"] = () => CRUDactions.Purge(PersonCollections.AlluserDatas),
-                            ["export xml"] = () => EXTRAactions.ExportXML(PersonCollections.AlluserDatas, lastValue),
-                            ["export csv"] = () => EXTRAactions.ExportCSV(PersonCollections.AlluserDatas, lastValue),
-                            ["import xml"] = () => EXTRAactions.ImportXML(),
-                            ["import csv"] = () => EXTRAactions.ImportCSV(),
-                            ["exit"] = () => EXTRAactions.LeaveEnvironment(),
-                            ["stat"] = () => EXTRAactions.Counter(PersonCollections.AlluserDatas),
-                        };
-
-                        if (dict.TryGetValue(resultCommand, out Action act))
-                            act();
+                        DictionaryChoisPanels.Maincommandchoose(lastValue, resultCommand);
                     }
                 }
             }

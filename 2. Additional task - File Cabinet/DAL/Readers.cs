@@ -38,7 +38,7 @@ namespace FileCabinet
                 }
 
                 PersonCollections.AlluserDatas = person;
-                PrintMethods.PrintImported(person);
+                Printers.PrintImported(person);
             }
             finally
             {
@@ -61,7 +61,7 @@ namespace FileCabinet
                 person = (List<Person>)serializer.Deserialize(reader);
             }
             PersonCollections.AlluserDatas = person;
-            PrintMethods.PrintImported(person);
+            Printers.PrintImported(person);
         }
     }
 }

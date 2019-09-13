@@ -5,12 +5,12 @@ using System.Xml.Serialization;
 using System.Linq;
 using CsvHelper;
 using System.Windows.Forms;
-using FileCabinet;
 
 namespace FileCabinet
 {
     /// <summary>
     /// Additional application commands that are not CRUD operations
+    /// Import, export, stat, purge, exit
     /// </summary>
     public class EXTRAactions
     {
