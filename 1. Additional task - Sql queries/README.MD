@@ -1,5 +1,4 @@
 ## NET.A.2019.Gridushko. Additional sql tasks.
-[google](https://www.google.com/)
 
 - [Task 01](https://github.com/Anton19840712/NET.A.2019/blob/master/1.%20Additional%20task%20-%20Sql%20queries/01%20Task.sql) Write a query that displays a list of customers in a table consisting of two columns, CustomerID and CompanyName. Table rows must be sorted by customer code.
 - [Task 02](https://github.com/Anton19840712/NET.A.2019/blob/master/1.%20Additional%20task%20-%20Sql%20queries/02%20Task.sql) Write a query that displays the EmployeeID of the last employee hired by the company.
