@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 using System.Linq;
 
 namespace FileCabinet
@@ -19,20 +21,9 @@ namespace FileCabinet
         public static object GetPersons(object obj, int identis)
         {
             var person = obj as Person;
-
-            Console.WriteLine("Insert the first name of person");
-            string firstname = Console.ReadLine();
-
-            Console.WriteLine("Insert the last name");
-            string lastname = Console.ReadLine();
-
-            Console.WriteLine("Insert the date of birth");
-            System.DateTime birthdate = Convert.ToDateTime(Console.ReadLine());
-
-            person.Id = identis;
-            person.Firstname = firstname;
-            person.Lastname = lastname;
-            person.BirthDate = birthdate;
+            Validators.CheckFirstNameAnnotation(person);
+            Validators.CheckLastNameAnnotation(person);
+            Validators.Asigning(identis, person);
             return person;
         }
         /// <summary>
@@ -43,6 +34,7 @@ namespace FileCabinet
         {
             var identis = (from t in persons select t.Id).Last() + 1;
             Person person = new Person();
+
             GetPersons(person, identis);
             persons.Add(new Person
             {
@@ -54,7 +46,9 @@ namespace FileCabinet
             log.Info("Person was created!");
             Console.WriteLine("Record like: \n");
             Printers.PrintEditPerson(person);
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("Was created successfully!\n");
+            Console.ResetColor();
         }
         /// <summary>
         /// Methods finds Firstname of Person
@@ -110,7 +104,7 @@ namespace FileCabinet
         /// <summary>
         /// Methods removes person record by Id
         /// </summary>
-        /// <param name="persons"></param>
+        /// <param name="persons"></param
         /// <param name="lastValue"></param>
         public static void Remove(IList<Person> persons, string lastValue)
         {
@@ -133,7 +127,9 @@ namespace FileCabinet
             Console.WriteLine("Purge");
             persons.Clear();
             log.Info("Collection was purged");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nAll data in database was purged successfully!");
+            Console.ResetColor();
         }
     }
 }

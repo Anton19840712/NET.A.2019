@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 
 [assembly: log4net.Config.XmlConfigurator(Watch = true)]
@@ -23,6 +24,7 @@ namespace FileCabinet
         static void Main(string[] args)
         {
             log.Info("Application was started!");
+
             MenuPanels.WriteInputGreeeting();
 
             while (true)
@@ -34,7 +36,7 @@ namespace FileCabinet
 
                 foreach (string stringElement in commandsList)
                 {
-                    string resultCommand = OperationsSplit.SplitClean(stringElement).Replace("find ", "");
+                    string resultCommand = OperationsSplit.SplitClean(stringElement).Replace("find ", "").ToLower();
                     List<string> resultElements = resultCommand.Split(' ').Where(c => c != string.Empty).ToList();
                     var lastValue = resultElements.Last();
 

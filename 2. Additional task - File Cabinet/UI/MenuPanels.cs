@@ -66,8 +66,10 @@ namespace FileCabinet
         /// </summary>
         public static void WriteResultOfEditions()
         {
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nNew person edited successfully!");
             Console.WriteLine("\nAnd looks like: ");
+            Console.ResetColor();
         }
     }
 }

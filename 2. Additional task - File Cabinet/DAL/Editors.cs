@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 
 namespace FileCabinet
 {
@@ -15,10 +16,7 @@ namespace FileCabinet
         /// <param name="i"></param>
         public static void AddFirstName(Person person, IList<Person> persons, int i)
         {
-            Console.WriteLine("Insert another firstname:");
-            string anotherFirstname = Console.ReadLine();
-            persons[i].Firstname = anotherFirstname;
-            person.Firstname = anotherFirstname;
+            Validators.CheckFirstNameAnnotation(person);
             MenuPanels.WriteResultOfEditions();
             Printers.PrintEditPerson(person);
             log.Info("Firstname in #" + i++ + " was edited");
@@ -32,10 +30,7 @@ namespace FileCabinet
         /// <param name="i"></param>
         public static void AddLastName(Person person, IList<Person> persons, int i)
         {
-            Console.WriteLine("Insert another lastname:");
-            string anotherLastname = Console.ReadLine();
-            persons[i].Lastname = anotherLastname;
-            person.Lastname = anotherLastname;
+            Validators.CheckLastNameAnnotation(person);
             MenuPanels.WriteResultOfEditions();
             Printers.PrintEditPerson(person);
             log.Info("Lastname in #" + i++ + " was edited");
@@ -48,10 +43,7 @@ namespace FileCabinet
         /// <param name="i"></param>
         public static void AddBirthDate(Person person, IList<Person> persons, int i)
         {
-            Console.WriteLine("Insert another birth of date:");
-            DateTime anotherBirtdate = DateTime.Parse(Console.ReadLine());
-            persons[i].BirthDate = anotherBirtdate;
-            person.BirthDate = anotherBirtdate;
+            Validators.Asigning(i, person);
             MenuPanels.WriteResultOfEditions();
             Printers.PrintEditPerson(person);
             log.Info("Birthdate in #" + i++ + " was edited");

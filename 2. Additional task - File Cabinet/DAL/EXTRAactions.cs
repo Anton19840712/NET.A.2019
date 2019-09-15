@@ -70,7 +70,9 @@ namespace FileCabinet
                 }
             }
             log.Info("Info csv exported");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nFile csv by path {0} was created successfully!", path);
+            Console.ResetColor();
         }
         /// <summary>
         /// Exports database info in XML format
@@ -96,7 +98,9 @@ namespace FileCabinet
             xmlSerializer.Serialize(sw, persons);
             sw.Close();
             log.Info("Info xml exported");
+            Console.ForegroundColor = ConsoleColor.White;
             Console.WriteLine("\nFile xml by path {0} was created successfully!", path);
+            Console.ResetColor();
         }
         /// <summary>
         /// Imports from XML to Console
