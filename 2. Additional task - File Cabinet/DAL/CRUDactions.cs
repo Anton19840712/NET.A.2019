@@ -39,8 +39,8 @@ namespace FileCabinet
             persons.Add(new Person
             {
                 Id = person.Id,
-                Firstname = person.Firstname,
-                Lastname = person.Lastname,
+                FirstName = person.FirstName,
+                LastName = person.LastName,
                 BirthDate = person.BirthDate,
             });
             log.Info("Person was created!");
@@ -51,30 +51,30 @@ namespace FileCabinet
             Console.ResetColor();
         }
         /// <summary>
-        /// Methods finds Firstname of Person
+        /// Methods finds FirstName of Person
         /// </summary>
         /// <param name="persons"></param>
         /// <param name="lastValue"></param>
-        public static void Firstname(IEnumerable<Person> persons, string lastValue)
+        public static void FirstName(IEnumerable<Person> persons, string lastValue)
         {
             foreach (var person in persons)
             {
-                if (person.Firstname == Convert.ToString(lastValue))
+                if (person.FirstName == Convert.ToString(lastValue))
                 {
                     Console.WriteLine("#" + person.Id);
                 }
             }
         }
         /// <summary>
-        /// Methods finds Lastname of Person
+        /// Methods finds LastName of Person
         /// </summary>
         /// <param name="persons"></param>
         /// <param name="lastValue"></param>
-        public static void Lastname(IEnumerable<Person> persons, string lastValue)
+        public static void LastName(IEnumerable<Person> persons, string lastValue)
         {
             foreach (var person in persons)
             {
-                if (person.Lastname == Convert.ToString(lastValue))
+                if (person.LastName == Convert.ToString(lastValue))
                 {
                     Console.WriteLine("#" + person.Id);
                 }
@@ -93,7 +93,7 @@ namespace FileCabinet
                 {
                     Console.WriteLine("\nYou are going to update the record:");
 
-                    var person = new Person { Id = persons[i].Id, Firstname = persons[i].Firstname, Lastname = persons[i].Lastname, BirthDate = persons[i].BirthDate };
+                    var person = new Person { Id = persons[i].Id, FirstName = persons[i].FirstName, LastName = persons[i].LastName, BirthDate = persons[i].BirthDate };
 
                     Printers.PrintEditPerson(person);
                     MenuPanels.WriteInputNumberUpdateMenu();

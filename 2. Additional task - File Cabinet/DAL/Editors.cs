@@ -19,7 +19,7 @@ namespace FileCabinet
             Validators.CheckFirstNameAnnotation(person);
             MenuPanels.WriteResultOfEditions();
             Printers.PrintEditPerson(person);
-            log.Info("Firstname in #" + i++ + " was edited");
+            log.Info("FirstName in #" + i++ + " was edited");
         }
 
         /// <summary>
@@ -33,7 +33,7 @@ namespace FileCabinet
             Validators.CheckLastNameAnnotation(person);
             MenuPanels.WriteResultOfEditions();
             Printers.PrintEditPerson(person);
-            log.Info("Lastname in #" + i++ + " was edited");
+            log.Info("LastName in #" + i++ + " was edited");
         }
         /// <summary>
         /// Method changes birtdate of person

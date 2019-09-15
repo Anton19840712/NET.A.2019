@@ -17,7 +17,7 @@ namespace FileCabinet
             var table = new TableFramer("Id", "First name", "Last name", "Date of birth");
             foreach (var person in persons)
             {
-                table.AddRow("#" + person.Id, person.Firstname, person.Lastname, person.BirthDate.ToString("ddd, dd MMMM yyyy", CultureInfo.GetCultureInfo("en-en")));
+                table.AddRow("#" + person.Id, person.FirstName, person.LastName, person.BirthDate.ToString("ddd, dd MMMM yyyy", CultureInfo.GetCultureInfo("en-en")));
             }
             table.Write();
             log.Info("Info listed");
@@ -25,7 +25,7 @@ namespace FileCabinet
         public static void PrintEditPerson(Person person)
         {
             var table = new TableFramer("Id", "First name", "Last name", "Date of birth");
-            table.AddRow("#" + person.Id, person.Firstname, person.Lastname, person.BirthDate.ToString("ddd, dd MMMM yyyy", CultureInfo.GetCultureInfo("en-en")));
+            table.AddRow("#" + person.Id, person.FirstName, person.LastName, person.BirthDate.ToString("ddd, dd MMMM yyyy", CultureInfo.GetCultureInfo("en-en")));
             table.Write();
         }
         public static void PrintWholeId(IEnumerable<Person> persons)
@@ -43,7 +43,7 @@ namespace FileCabinet
             var table = new TableFramer("Id", "First name", "Last name", "Date of birth");
             foreach (var p in person)
             {
-                table.AddRow("#" + p.Id, p.Firstname, p.Lastname, p.BirthDate.ToString("ddd, dd MMMM yyyy", CultureInfo.GetCultureInfo("en-en")));
+                table.AddRow("#" + p.Id, p.FirstName, p.LastName, p.BirthDate.ToString("ddd, dd MMMM yyyy", CultureInfo.GetCultureInfo("en-en")));
             }
             table.Write();
         }

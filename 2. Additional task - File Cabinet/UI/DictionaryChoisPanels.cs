@@ -19,8 +19,8 @@ namespace FileCabinet
             {
                 ["list"] = () => Printers.PrintPersons(PersonCollections.AlluserDatas),
                 ["list id"] = () => Printers.PrintWholeId(PersonCollections.AlluserDatas),
-                ["firstname"] = () => CRUDactions.Firstname(PersonCollections.AlluserDatas, lastValue),
-                ["lastname"] = () => CRUDactions.Lastname(PersonCollections.AlluserDatas, lastValue),
+                ["firstname"] = () => CRUDactions.FirstName(PersonCollections.AlluserDatas, lastValue),
+                ["lastname"] = () => CRUDactions.LastName(PersonCollections.AlluserDatas, lastValue),
                 ["create"] = () => CRUDactions.Create(PersonCollections.AlluserDatas),
                 ["edit"] = () => CRUDactions.Edit(PersonCollections.AlluserDatas, lastValue),
                 ["remove"] = () => CRUDactions.Remove(PersonCollections.AlluserDatas, lastValue),

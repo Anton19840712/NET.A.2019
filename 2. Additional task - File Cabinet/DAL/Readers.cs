@@ -31,8 +31,8 @@ namespace FileCabinet
                     var element = new Person();
 
                     element.Id = int.Parse(superLine[0]);
-                    element.Firstname = superLine[1];
-                    element.Lastname = superLine[2];
+                    element.FirstName = superLine[1];
+                    element.LastName = superLine[2];
                     element.BirthDate = DateTime.Parse(superLine[3]);
 
                     person.Add(element);

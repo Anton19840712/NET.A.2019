@@ -13,7 +13,7 @@ namespace FileCabinet
             while (!IsValid)
             {
                 Console.WriteLine("Insert the first name of person");
-                person.Firstname = Console.ReadLine();
+                person.FirstName = Console.ReadLine();
                 IsValid = CommonCheckingLogic(person);
             }
         }
@@ -24,7 +24,7 @@ namespace FileCabinet
             while (!IsValid)
             {
                 Console.WriteLine("Insert the last name of person");
-                person.Lastname = Console.ReadLine();
+                person.LastName = Console.ReadLine();
                 IsValid = CommonCheckingLogic(person);
             }
         }

@@ -36,7 +36,7 @@ namespace FileCabinet
 
                 foreach (string stringElement in commandsList)
                 {
-                    string resultCommand = OperationsSplit.SplitClean(stringElement).Replace("find ", "").ToLower();
+                    string resultCommand = OperationsSplit.SplitClean(stringElement).Replace("find ", "");
                     List<string> resultElements = resultCommand.Split(' ').Where(c => c != string.Empty).ToList();
                     var lastValue = resultElements.Last();
 
@@ -44,7 +44,7 @@ namespace FileCabinet
                     {
                         string[] arr = resultCommand.Trim().Split(null);
                         arr = arr.Where((o, i) => i != arr.Length - 1).ToArray();
-                        resultCommand = string.Join(" ", arr);
+                        resultCommand = string.Join(" ", arr).ToLower();
                     }
 
                     bool boolResult = ActionTypes.listcommands.Any(o => o.StartsWith(resultCommand));
