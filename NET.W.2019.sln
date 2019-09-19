@@ -28,6 +28,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "2. Additional task - File C
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET.A.2019.Gridushko.15", "NET.A.2019.Gridushko.15\NET.A.2019.Gridushko.15.csproj", "{CCB22EDD-9877-4669-A502-3D97E29F4396}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NET.A.2019.Gridushko.19", "NET.A.2019.Gridushko.19\NET.A.2019.Gridushko.19.csproj", "{420E0565-09E4-4912-B7AE-5D7F64EE474C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -42,6 +44,10 @@ Global
 		{CCB22EDD-9877-4669-A502-3D97E29F4396}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CCB22EDD-9877-4669-A502-3D97E29F4396}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CCB22EDD-9877-4669-A502-3D97E29F4396}.Release|Any CPU.Build.0 = Release|Any CPU
+		{420E0565-09E4-4912-B7AE-5D7F64EE474C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{420E0565-09E4-4912-B7AE-5D7F64EE474C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{420E0565-09E4-4912-B7AE-5D7F64EE474C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{420E0565-09E4-4912-B7AE-5D7F64EE474C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

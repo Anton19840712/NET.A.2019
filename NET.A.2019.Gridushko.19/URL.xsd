@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xsd:schema xmlns:xsd ="http://www/w3.org/2001/XMLSchema">
+  <xsd:element name ="urlAddresses">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="urlAddress" minOccurs="1" maxOccurs="4">
+          <xsd:complexType>
+            <xsd:sequence>
+              <xsd:element name="host name" minOccurs="1" maxOccurs="4"/>
+              <xsd:element name="uri" minOccurs="1" maxOccurs="4"/>
+              <xsd:element name="segment" minOccurs="1" maxOccurs="4"/>  
+            </xsd:sequence>
+          </xsd:complexType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>
