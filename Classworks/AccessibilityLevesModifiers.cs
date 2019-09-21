@@ -7,7 +7,7 @@ public abstract class BaseClass
 {
     public string GetCode() { return "CODE-1"; }
     internal string GetDescription() { return this.GetDefaultDescription() + this.GetClassSymbol(); }
-    private protected virtual string GetDefaultDescription() { return "CLASS-"; }
+    protected string GetDefaultDescription() { return "CLASS-"; }
     protected abstract string GetClassSymbol();
 }
 public class DerivedClassA : BaseClass
@@ -23,7 +23,7 @@ internal class DerivedClassB : BaseClass
         public static string CetCode() { return "CODE-3"; }
     }
     public string GetCode() { return DerivedClassImpl.CetCode(); }
-    protected private override string GetDefaultDescription() { return string.Empty; }
+    protected string GetDefaultDescription() { return string.Empty; }
     protected override string GetClassSymbol() { return "B"; }
 }
 
