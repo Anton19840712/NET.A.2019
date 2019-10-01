@@ -1,0 +1,47 @@
+﻿body {
+}
+
+#menu ul {
+    list-style: none;
+}
+
+body {
+    background-color: lightgreen;
+}
+
+@media only screen and (max-width: 1200px) {
+    body {
+        background-color: lightblue;
+    }
+}
+
+
+@media only screen and (max-width: 500px) {
+    body {
+        background-color: honeydew;
+    }
+}
+
+#menu ul li {
+    background-color: cornflowerblue;
+    border: solid 1px white;
+    width: 120px;
+    height: 35px;
+    text-align: center;
+    line-height: 35px;
+    float: left;
+    position: relative;
+    border-radius: 10px;
+}
+
+    #menu ul li a {
+        text-decoration: none;
+        color: #fff;
+        display: block
+    }
+
+        #menu ul li a:hover {
+            background-color: #ff6a00;
+            color: #fff;
+            border-radius: 10px;
+        }

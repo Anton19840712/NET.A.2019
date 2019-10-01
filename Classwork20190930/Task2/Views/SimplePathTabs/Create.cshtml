@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Task2.SimplePathTab>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <ul id="mycarousel" class="jcarousel-skin-tango">
+        @foreach (var item in Model)
+        {
+            <li>
+                @*<img alt="" style='height: 75px; width: 75px' src='@image' />*@
+                <img src='@Url.Content(item.Imgpath)' />
+            </li>
+        }
+    </ul>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/jcarousel/0.2.8/jquery.jcarousel.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/jcarousel/0.2.8/skins/tango/skin.css" rel="Stylesheet" />
+    <script type="text/javascript">
+        $(function () {
+            $('#mycarousel').jcarousel();
+        });
+    </script>
+</body>
+</html>
