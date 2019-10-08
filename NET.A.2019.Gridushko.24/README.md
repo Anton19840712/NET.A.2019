@@ -1,14 +1,8 @@
 ﻿# NET.A.Gridushko.24(deadline - хх.00)
-Добавить в Solution с проектами для работы с банковским счетом (Homework
-Day 14/15/16) проект ASP.NET MVC.
-Для web-приложения реализовать следующие возможности:
-- выполнить пополнение на счет;
-- выполнить списание со счета;
-- выполнить перевод с одного счета на другой, в случае принадлежности
-счетов как одному владельцу, так и различным;
-- создать новый счет;
-- закрыть счет.
-В логику работы приложения добавить функциональную возможность рассылки
-владельцу счета сообщений с информацией о списанной или пополненной сумме на
-его счету, а также о начисленных бонусных баллах.
-Для стилизации web-приложения использовать Bootstrap css-фреймворк.
+Add the ASP.NET MVC project to the Solution with projects for working with a bank account (Homework Day 14/15/16). For a web application, implement the following features:
+- make a deposit to the account;
+- withdraw from the account;
+- transfer from one account to another, if the accounts belong to one owner or to different;
+- create a new account;
+- close an account.
+In the application logic, add the functionality of sending messages to the account owner with information about the deducted or replenished amount in his account, as well as about the accrued bonus points. To style a web application, use the Bootstrap css framework.
