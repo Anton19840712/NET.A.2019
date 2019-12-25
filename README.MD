@@ -12,5 +12,4 @@
 - [  15 ](https://github.com/Anton19840712/NET.A.2019/tree/master/NET.A.2019.Gridushko.15) Homework
 
 
-FileCabinet project is a console application with base CRUD logic inside
-SQL queries - basic SQL skills 
+FileCabinet project is a console application with base CRUD logic inside, SQL queries - basic SQL skills 
